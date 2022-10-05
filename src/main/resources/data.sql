@@ -1,0 +1,46 @@
+DROP TABLE IF EXISTS PERSON;
+
+CREATE TABLE PERSON (
+    "ID" BIGINT auto_increment NOT NULL PRIMARY KEY,
+    "AGE" INTEGER NOT NULL,
+    "BIRTHDAY" DATE,
+    "COUNTRY" CHARACTER VARYING(255),
+    "EMAIL" CHARACTER VARYING(255),
+    "FIRST_NAME" CHARACTER VARYING(255),
+    "GENDER" CHARACTER VARYING(255),
+    "LAST_NAME" CHARACTER VARYING(255),
+    "PERSON_ID" CHARACTER VARYING(255)
+);
+
+INSERT INTO PERSON VALUES
+INSERT INTO PERSON VALUES (1, 22, DATE '2000-08-15', 'China', 'gspearing0@flickr.com', 'Ginnie', 'FEMALE', 'Spearing', 'fa26fa96-97d3-4e8e-856a-fdf07499e13e'),
+INSERT INTO PERSON VALUES (2, 23, DATE '1999-01-25', 'Panama', 'nloynes2@woothemes.com', 'Natala', 'FEMALE', 'Loynes', '24be24e6-525f-42de-855d-52d4fef21608'),
+INSERT INTO PERSON VALUES (3, 9, DATE '2013-04-15', 'Japan', 'jheino3@mayoclinic.com', 'Jard', 'MALE', 'Heino', '87cdda81-45d0-451a-a62f-f8450eae1b64'),
+INSERT INTO PERSON VALUES (4, 8, DATE '2014-05-09', 'Indonesia', 'jcarlaw1@t.co', 'Jilleen', 'FEMALE', 'Carlaw', 'c722e6d5-9024-49c5-80e0-c2555f1eb9cc'),
+INSERT INTO PERSON VALUES (5, 22, DATE '2000-03-18', 'Indonesia', 'rgillino6@china.com.cn', 'Rainer', 'MALE', 'Gillino', '5302a199-f313-4a24-9550-d643001d9faf'),
+INSERT INTO PERSON VALUES (6, 9, DATE '2013-02-16', 'China', 'rcossans4@harvard.edu', 'Roseline', 'FEMALE', 'Cossans', '06f70b0d-2c98-4f46-b933-528499ab91b3'),
+INSERT INTO PERSON VALUES (7, 15, DATE '2007-01-12', 'Portugal', 'kcusiter7@google.cn', 'Katee', 'FEMALE', 'Cusiter', 'eac56547-dc5e-4f24-8598-82f29cefd6f6'),
+INSERT INTO PERSON VALUES (8, 8, DATE '2014-02-23', 'China', 'playfield5@wsj.com', 'Pate', 'MALE', 'Layfield', '030da40d-4cab-4e34-98ea-deacadbeb983'),
+INSERT INTO PERSON VALUES (9, 8, DATE '2014-04-19', 'Sweden', 'mmolnar9@addtoany.com', 'Marja', 'FEMALE', 'Molnar', '7d965949-d16e-49e8-b356-ff89b1108bee'),
+INSERT INTO PERSON VALUES (10, 9, DATE '2012-10-12', 'China', 'jdarnodya@hud.gov', 'Janene', 'FEMALE', 'Darnody', 'd2e81e5a-0b7f-47c4-8986-c0ec1953afe4'),
+INSERT INTO PERSON VALUES (11, 27, DATE '1995-08-14', 'Honduras', 'kwoodroof8@weibo.com', 'Kristian', 'MALE', 'Woodroof', '8640f035-29ec-48fd-87ac-63d6337b7526'),
+INSERT INTO PERSON VALUES (12, 17, DATE '2004-10-19', 'China', 'ccramptonb@ucoz.com', 'Chan', 'MALE', 'Crampton', '838e2485-eacf-4199-bb03-34ecba908c74'),
+INSERT INTO PERSON VALUES (13, 20, DATE '2001-12-06', 'Netherlands', 'talloned@huffingtonpost.com', 'Trent', 'MALE', 'Allone', '94543839-b6a1-4319-9677-8ed78bd3b96a'),
+INSERT INTO PERSON VALUES (14, 22, DATE '2000-02-13', 'Madagascar', 'ogoburnc@biblegateway.com', 'Orv', 'MALE', 'Goburn', 'b885ed3a-45d2-4a68-a2f4-99aae1e62aa0'),
+INSERT INTO PERSON VALUES (15, 34, DATE '1988-02-06', 'Poland', 'gbelcheme@issuu.com', 'Gianna', 'FEMALE', 'Belchem', 'e7609058-c885-4618-b551-591dfb38d5d4'),
+INSERT INTO PERSON VALUES (16, 37, DATE '1984-12-13', 'Uganda', 'sdoigf@shutterfly.com', 'Shaylyn', 'FEMALE', 'Doig', 'd61ce144-4053-4225-b0c1-26d9bce4f39d'),
+INSERT INTO PERSON VALUES (17, 8, DATE '2014-03-16', 'Indonesia', 'sfeanderg@addtoany.com', 'Stoddard', 'FEMALE', 'Feander', '5f5e214e-6274-4186-b385-898dc8e5f9bc'),
+INSERT INTO PERSON VALUES (18, 10, DATE '2012-08-03', 'Colombia', 'vsenescallh@exblog.jp', 'Valenka', 'FEMALE', 'Senescall', '92d8f0ed-93f3-41f1-a273-e0aa7ca2cde7'),
+INSERT INTO PERSON VALUES (19, 21, DATE '2000-12-04', 'Philippines', 'cbotcherbyj@skyrock.com', 'Cristionna', 'FEMALE', 'Botcherby', '173c6ac8-24ee-4821-8357-a1b73840ce8c'),
+INSERT INTO PERSON VALUES (20, 19, DATE '2002-10-30', 'Czech Republic', 'msanjai@zdnet.com', 'Melesa', 'FEMALE', 'Sanja', '30297553-b7f6-4e38-b6d5-57557699bca1'),
+INSERT INTO PERSON VALUES (21, 33, DATE '1988-10-18', 'Morocco', 'dstoppm@hubpages.com', 'Dulsea', 'FEMALE', 'Stopp', 'f4a0de2f-06d8-496a-b872-f3ba77b7a033'),
+INSERT INTO PERSON VALUES (22, 12, DATE '2010-01-05', 'Central African Republic', 'jwillockl@arizona.edu', 'Jessey', 'MALE', 'Willock', 'a6042684-79f8-4781-971c-5d231ad1885f'),
+INSERT INTO PERSON VALUES (23, 26, DATE '1996-03-24', 'Mali', 'oblandamerep@soundcloud.com', 'Osbert', 'MALE', 'Blandamere', 'b8159cf1-1323-4c57-a579-c750cb065812'),
+INSERT INTO PERSON VALUES (24, 19, DATE '2003-07-31', 'Brazil', 'apopplewellk@ed.gov', 'Adolphe', 'MALE', 'Popplewell', '79846061-a767-4dab-a8a6-3107b7418f7f'),
+INSERT INTO PERSON VALUES (25, 12, DATE '2009-12-24', 'China', 'bpopleq@tripod.com', 'Borg', 'FEMALE', 'Pople', '77d7d1a0-441d-4434-bf34-6c549301f752'),
+INSERT INTO PERSON VALUES (26, 33, DATE '1989-05-25', 'Japan', 'pdoreen@eepurl.com', 'Pooh', 'FEMALE', 'Doree', '054d8614-9e46-4189-84e1-5607b2edc467'),
+INSERT INTO PERSON VALUES (27, 38, DATE '1984-01-15', 'China', 'blissetto@telegraph.co.uk', 'Bryanty', 'MALE', 'Lissett', '85213393-5d06-48c8-bc76-7665339f9ca8'),
+INSERT INTO PERSON VALUES (28, 3, DATE '2019-03-31', 'Israel', 'spenvarneu@msn.com', 'Sayre', 'MALE', 'Penvarne', '5c7c4418-7cb0-4250-8246-628044606485'),
+INSERT INTO PERSON VALUES (29, 39, DATE '1983-06-09', 'China', 'rblavers@umn.edu', 'Ronni', 'FEMALE', 'Blaver', '89539c93-c02a-4048-af3e-2feb02b5b837'),
+INSERT INTO PERSON VALUES (30, 34, DATE '1988-07-07', 'China', 'beverext@sfgate.com', 'Bondon', 'MALE', 'Everex', '20e8123b-2bb1-4cbf-9bdc-61d10dc30321'),
+INSERT INTO PERSON VALUES (31, 23, DATE '1999-06-15', 'Sweden', 'modarer@wiley.com', 'Madelle', 'FEMALE', 'O''Dare', '19afcdd4-404a-42c2-bd9b-e21afd402332');
