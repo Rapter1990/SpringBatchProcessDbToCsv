@@ -64,7 +64,7 @@ public class BatchConfiguration {
                 setDelimiter(",");
                 setFieldExtractor(new BeanWrapperFieldExtractor<User>() {
                     {
-                        setNames(new String[]{"ID", "AGE", "BIRTHDAY", "COUNTRY", "EMAIL", "FIRST_NAME", "GENDER", "LAST_NAME", "PERSON_ID"});
+                        setNames(new String[]{"id", "age", "birthday", "country", "email", "firstName", "gender", "lastName", "personId"});
                     }
                 });
             }
