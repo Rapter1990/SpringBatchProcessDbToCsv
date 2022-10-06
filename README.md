@@ -1,6 +1,6 @@
 # Spring Boot Batch Processing DB to CSV
 
-<img src="" alt="Main Information" width="800" height="500">
+<img src="/screenshots/batch_db_to_csv_main.PNG" alt="Main Information" width="800" height="500">
 
 ### 📖 Information
 
@@ -80,7 +80,13 @@ Explore Rest APIs
     http://localhost:2121/batch/importuserjob
 ```
 
+
 ### Screenshots
 
 <details>
-</details>
+<summary>Click here to show the screenshots of project</summary>
+    <p> Figure 1 </p>
+    <img src ="screenshots/batch_db_to_csv_1.PNG">
+    <p> Figure 2 </p>
+    <img src ="screenshots/batch_db_to_csv_2.PNG">
+</details>    
