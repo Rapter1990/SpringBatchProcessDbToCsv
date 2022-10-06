@@ -11,6 +11,7 @@ import org.springframework.batch.core.configuration.annotation.EnableBatchProces
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.item.data.RepositoryItemReader;
+import org.springframework.batch.item.file.FlatFileHeaderCallback;
 import org.springframework.batch.item.file.FlatFileItemWriter;
 import org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor;
 import org.springframework.batch.item.file.transform.DelimitedLineAggregator;
@@ -18,10 +19,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
-import org.springframework.core.task.SimpleAsyncTaskExecutor;
-import org.springframework.core.task.TaskExecutor;
 import org.springframework.data.domain.Sort;
 
+import java.io.IOException;
+import java.io.Writer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -39,6 +40,8 @@ public class BatchConfiguration {
     Date now = new Date(); // java.util.Date, NOT java.sql.Date or java.sql.Timestamp!
     String format1 = new SimpleDateFormat("yyyy-MM-dd'-'HH-mm-ss-SSS",Locale.forLanguageTag("tr-TR")).format(now);
     private Resource outputResource = new FileSystemResource("output/customers_" + format1 + ".csv");
+
+    private final String[] headers = new String[]{"id", "age", "birthday", "country", "email", "firstName", "gender", "lastName", "personId"};
 
     @Bean
     public RepositoryItemReader<User> reader(){
@@ -64,9 +67,21 @@ public class BatchConfiguration {
                 setDelimiter(",");
                 setFieldExtractor(new BeanWrapperFieldExtractor<User>() {
                     {
-                        setNames(new String[]{"id", "age", "birthday", "country", "email", "firstName", "gender", "lastName", "personId"});
+                        setNames(headers);
                     }
                 });
+            }
+        });
+
+        writer.setHeaderCallback(new FlatFileHeaderCallback() {
+            @Override
+            public void writeHeader(Writer writer) throws IOException {
+                for(int i=0;i<headers.length;i++){
+                    if(i!=headers.length-1)
+                        writer.append(headers[i] + ",");
+                    else
+                        writer.append(headers[i]);
+                }
             }
         });
 
@@ -96,7 +111,6 @@ public class BatchConfiguration {
                 .processor(processor())
                 .writer(writer())
                 .listener(stepExecutionListener())
-                .taskExecutor(taskExecutor())
                 .build();
     }
 
@@ -106,12 +120,5 @@ public class BatchConfiguration {
                 .listener(jobExecutionListener())
                 .flow(step1()).end().build();
 
-    }
-
-    @Bean
-    public TaskExecutor taskExecutor() {
-        SimpleAsyncTaskExecutor asyncTaskExecutor = new SimpleAsyncTaskExecutor();
-        asyncTaskExecutor.setConcurrencyLimit(10);
-        return asyncTaskExecutor;
     }
 }

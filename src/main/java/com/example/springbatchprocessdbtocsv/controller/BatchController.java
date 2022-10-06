@@ -26,9 +26,9 @@ public class BatchController {
     private final Job job;
 
     @PostMapping("/importuserjob")
-    public ResponseEntity<String> importCsvToDBJob() {
+    public ResponseEntity<String> importDvToCsvJob() {
 
-        log.info("BatchController | importCsvToDBJob is called");
+        log.info("BatchController | importDvToCsvJob is called");
 
         JobParameters jobParameters = new JobParametersBuilder()
                 .addLong("startAt", System.currentTimeMillis()).toJobParameters();
@@ -36,7 +36,7 @@ public class BatchController {
             jobLauncher.run(job, jobParameters);
         } catch (JobExecutionAlreadyRunningException | JobRestartException |
                  JobInstanceAlreadyCompleteException | JobParametersInvalidException e) {
-            log.info("BatchController | importDbToCSVJob | error : " + e.getMessage());
+            log.info("BatchController | importDvToCsvJob | error : " + e.getMessage());
             e.printStackTrace();
         }
 
