@@ -26,7 +26,7 @@ public class BatchController {
     private final Job job;
 
     @PostMapping("/importuserjob")
-    public ResponseEntity<String> importDvToCsvJob() {
+    public ResponseEntity<String> importDbToCsvJob() {
 
         log.info("BatchController | importDvToCsvJob is called");
 

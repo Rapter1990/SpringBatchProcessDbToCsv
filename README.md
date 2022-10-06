@@ -63,7 +63,7 @@ Explore Rest APIs
   </tr>
   <tr>
       <td>GET</td>
-      <td>importCsvToDBJob</td>
+      <td>importDbToCsvJob</td>
       <td>Import db to csv</td>
       <td></td>
       <td></td>
