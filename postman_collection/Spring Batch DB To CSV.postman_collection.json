@@ -1,0 +1,29 @@
+{
+	"info": {
+		"_postman_id": "854caefd-0ea7-4dec-8e39-18dfdea91f08",
+		"name": "Spring Batch DB To CSV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Call Batch Method",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2121/batch/importuserjob",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2121",
+					"path": [
+						"batch",
+						"importuserjob"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
